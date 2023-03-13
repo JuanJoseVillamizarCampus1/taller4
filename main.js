@@ -4,7 +4,7 @@ alert que gestione las siguientes opciones de menú referentes al
 manejo de los arrays, objetos, funciones y otras operaciones en
 JavaScript entre dichos temas.
 */
-    function gestionarMenu() {
+    function menu() {
         let seleccion;
         let edad;
         let name;
@@ -13,6 +13,10 @@ JavaScript entre dichos temas.
         const lista1=[];
         let nameobjeto;
         let nameobjeto1;
+        let propiedad1;
+        let propiedad2;
+        let value1;
+        let value2;
         do {
           seleccion = parseInt(prompt(`--------------MENU--------------
           1.  Lectura de Datos
@@ -113,15 +117,15 @@ JavaScript entre dichos temas.
               console.log("Seleccionaste la opcion 11 .Crear array con objetos");
               nameobjeto=prompt("ingrese el nombre de su objeto")
 
-              for (let index = 0; index < 3; index++) {
-                propiedad1=prompt(`Ingrese la propiedad  de su objeto ${nameobjeto}`);
+              for (let index = 0; index < 2; index++) {
+                propiedad1=prompt(`Ingrese la propiedad ${index+1}  de su objeto ${nameobjeto}`);
                 value1=prompt(`Ingrese el valor de la propiedad ${propiedad1}`);
                 objeto[propiedad1]=value1;
             }
             const objeto1={}
               nameobjeto1 = prompt("ingrese el nombre de su objeto2")
 
-              for (let index = 0; index < 3; index++) {
+              for (let index = 0; index < 2; index++) {
                 propiedad2=prompt(`Ingrese la propiedad  de su objeto ${nameobjeto1}`);
                 value2=prompt(`Ingrese el valor de la propiedad ${propiedad2}`);
                 objeto1[propiedad2]=value2;
@@ -130,12 +134,11 @@ JavaScript entre dichos temas.
               console.log(lista1);
               alert(lista1);
               break;
-
             case 12:
               console.log("Seleccionaste la opcion 12 .Iterar array con FOR");
               for(let j =0; j<lista1.length; j++){
-                console.log(`Los elementos  del objeto ${nameobjeto1}son ${lista1[j].propiedad2}--${lista1[j].value2}`);
-                console.log(`Los elementos  del objeto ${nameobjeto}son ${lista1[j].value1}--${lista1[j].value1}`);
+                console.log(`Los elementos  del objeto ${nameobjeto1}son ${lista1[j].propiedad1}--${lista1[j].value1}`);
+                console.log(`Los elementos  del objeto ${nameobjeto}son ${lista1[j].propiedad2}--${lista1[j].value2}`);
               }
               a=lista1.length;
               console.log(a);
@@ -152,8 +155,54 @@ JavaScript entre dichos temas.
               lista1.map((arr) => {console.log(`Iterando con ForEach${arr.propiedad2}-${arr.value2}`);});
               break;
             case 15:
-              alert("Proceso personal");
-              // Código para proceso personal
+               alert("Seleccionaste la opcion 15  .Calculadora");
+              const suma = (num1,num2)=>{
+                  return Number(num1)+Number(num2);
+              }
+                const resta = (num1,num2)=>{
+                  return Number(num1)-Number(num2);
+              }
+                const multi = (num1,num2)=>{
+                  return Number(num1)*Number(num2);  
+              }
+                  const div = (num1,num2)=>{
+                  return Number(num1)/Number(num2);  
+              }
+              alert("¿Que operacion deseas realizar?");
+            let operacion = prompt("1: suma, 2: resta, 3: multiplicacion, 4:division");
+            if (operacion == 1) {
+              let numero1 = prompt("pimer numero para sumar");
+              let numero2 = prompt("segundo numero para sumar");
+              resultado = suma(numero1,numero2);
+              alert(`tu resultado es ${resultado}`);
+              console.log(`tu resultado es ${resultado}`);
+            }
+
+
+            else if (operacion == 2) {
+              let numero1 = prompt("pimer numero para restar");
+              let numero2 = prompt("segundo numero para restar");
+              resultado = resta(numero1,numero2);
+              alert(`tu resultado es ${resultado}`);
+              console.log(`tu resultado es ${resultado}`);
+            }
+            else if (operacion == 3) {
+              let numero1 = prompt("pimer numero para multiplicar");
+              let numero2 = prompt("segundo numero para multiplicar");
+              resultado = multiplicacion(numero1,numero2);
+              alert(`tu resultado es ${resultado}`);
+              console.log(`tu resultado es ${resultado}`);
+            }
+            else if (operacion == 4) {
+              let numero1 = prompt("pimer numero para dividir");
+              let numero2 = prompt("segundo numero para dividir");
+              resultado = division(numero1,numero2);
+              alert(`tu resultado es ${resultado}`);
+              console.log(`tu resultado es ${resultado}`);
+            }
+            else{
+              alert("operacion no encontrada")
+            }
               break;
             case 0:
               alert("No te vayas :(, mira que esto se compone");
@@ -165,5 +214,5 @@ JavaScript entre dichos temas.
         } while (seleccion !== 0);
       }
       
-      gestionarMenu();
+    menu();
       
