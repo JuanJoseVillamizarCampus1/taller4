@@ -11,6 +11,8 @@ JavaScript entre dichos temas.
         const datos={};
         const comidas=[];
         const lista1=[];
+        let nameobjeto;
+        let nameobjeto1;
         do {
           seleccion = parseInt(prompt(`--------------MENU--------------
           1.  Lectura de Datos
@@ -103,39 +105,51 @@ JavaScript entre dichos temas.
               alert(comidas);
               console.log(comidas);
               break;
+
+
             case 11:
+            const objeto={}
               alert("Seleccionaste la opcion 11 .Crear array con objetos");
               console.log("Seleccionaste la opcion 11 .Crear array con objetos");
-              objeto = prompt("ingrese el nombre de su objeto")
+              nameobjeto=prompt("ingrese el nombre de su objeto")
 
               for (let index = 0; index < 3; index++) {
-                propiedad1=prompt(`Ingrese la propiedad  de su objeto ${objeto}`);
+                propiedad1=prompt(`Ingrese la propiedad  de su objeto ${nameobjeto}`);
                 value1=prompt(`Ingrese el valor de la propiedad ${propiedad1}`);
-                lista1[propiedad1]=value1;
+                objeto[propiedad1]=value1;
             }
-            objeto1 = prompt("ingrese el nombre de su objeto2")
+            const objeto1={}
+              nameobjeto1 = prompt("ingrese el nombre de su objeto2")
 
               for (let index = 0; index < 3; index++) {
-                propiedad2=prompt(`Ingrese la propiedad  de su objeto ${objeto1}`);
+                propiedad2=prompt(`Ingrese la propiedad  de su objeto ${nameobjeto1}`);
                 value2=prompt(`Ingrese el valor de la propiedad ${propiedad2}`);
-                lista1[propiedad2]=value2;
+                objeto1[propiedad2]=value2;
             }
+            lista1.push(objeto,objeto1);
               console.log(lista1);
               alert(lista1);
               break;
+
             case 12:
-              console.log("Iterar array con FOR");
+              console.log("Seleccionaste la opcion 12 .Iterar array con FOR");
               for(let j =0; j<lista1.length; j++){
-                console.log(`Los elementos son ${lista1[j]}`);
+                console.log(`Los elementos  del objeto ${nameobjeto1}son ${lista1[j].propiedad2}--${lista1[j].value2}`);
+                console.log(`Los elementos  del objeto ${nameobjeto}son ${lista1[j].value1}--${lista1[j].value1}`);
               }
+              a=lista1.length;
+              console.log(a);
               break;
             case 13:
-              console.log("Iterar array con objetos ForEacH");
-              // Código para iterar array con objetos
+              console.log("Seleccionaste la opcion 13 .Iterar array con objetos ForEacH");
+              lista1.forEach((arr) => {console.log(`Iterando con ForEach${arr.propiedad1}-${arr.value1}`);});
+              lista1.forEach((arr) => {console.log(`Iterando con ForEach${arr.propiedad2}-${arr.value2}`);});
+            
               break;
             case 14:
-              alert("Iterar array con objetos Map y crear copia");
-              // Código para iterar array con objetos Map y crear copia
+              alert("Seleccionaste la opcion 14  .Iterar array con objetos Map y crear copia");
+              lista1.map((arr) => {console.log(`Iterando con Map${arr.propiedad1}-${arr.value1}`);});
+              lista1.map((arr) => {console.log(`Iterando con ForEach${arr.propiedad2}-${arr.value2}`);});
               break;
             case 15:
               alert("Proceso personal");
